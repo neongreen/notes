@@ -1,20 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Main]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://notes.artyom.me/</link><image><url>https://notes.artyom.me/lib/media/favicon.png</url><title>Main</title><link>https://notes.artyom.me/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 27 Nov 2024 13:19:49 GMT</lastBuildDate><atom:link href="https://notes.artyom.me/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 27 Nov 2024 13:19:48 GMT</pubDate><copyright><![CDATA[Emily]]></copyright><ttl>60</ttl><dc:creator>Emily</dc:creator><item><title><![CDATA[index]]></title><description><![CDATA[ 
- <br>See the sidebar for the list of notes.<br>]]></description><link>https://notes.artyom.me/index.html</link><guid isPermaLink="false">index.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:19:48 GMT</pubDate></item><item><title><![CDATA[Regexes]]></title><description><![CDATA[ 
- <br><br><a data-tooltip-position="top" aria-label="https://regexr.com" rel="noopener nofollow" class="external-link" href="https://regexr.com" target="_blank">regexr.com</a> supports:<br>
-<br>JS regexes
-<br>PCRE regexes
-<br>Replacement
-<br><br><br>
-<br>~ Apparenty VSCode supports multiline search now (with Shift+Enter), gotta check
-<br><br>
-<br>Multiline matches
-]]></description><link>https://notes.artyom.me/manuals/dev/regexes.html</link><guid isPermaLink="false">Manuals/Dev/Regexes.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Mon, 25 Nov 2024 20:16:07 GMT</pubDate></item><item><title><![CDATA[Shell scripting]]></title><description><![CDATA[ 
- <br><br><br>Globs are not expanded when assigning vars.]]></description><link>https://notes.artyom.me/manuals/dev/shell-scripting.html</link><guid isPermaLink="false">Manuals/Dev/Shell scripting.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 10:38:19 GMT</pubDate></item><item><title><![CDATA[SQL]]></title><description><![CDATA[ 
- <br><br>Use <a data-href="DuckDB" href="https://notes.artyom.me/manuals/software/duckdb.html" class="internal-link" target="_self" rel="noopener nofollow">DuckDB</a>:<br>duckdb -csv -c "$(cat &lt;&lt;EOF
-  select * from 'data.csv'
-EOF
-)"
-<br><br><br><br>The decimal type is a decimal floating point type.<br>Example: decimal(38,19) gives you 38 total digits, out of which 19 are after the point.]]></description><link>https://notes.artyom.me/manuals/dev/sql.html</link><guid isPermaLink="false">Manuals/Dev/SQL.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:06:03 GMT</pubDate></item><item><title><![CDATA[DuckDB]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Main]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://notes.artyom.me/</link><image><url>https://notes.artyom.me/lib/media/favicon.png</url><title>Main</title><link>https://notes.artyom.me/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 27 Nov 2024 13:38:00 GMT</lastBuildDate><atom:link href="https://notes.artyom.me/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 27 Nov 2024 13:37:58 GMT</pubDate><copyright><![CDATA[Emily]]></copyright><ttl>60</ttl><dc:creator>Emily</dc:creator><item><title><![CDATA[DuckDB]]></title><description><![CDATA[ 
  <br>Looks like a more modern <a data-href="SQLite" href="https://notes.artyom.me/SQLite" class="internal-link" target="_self" rel="noopener nofollow">SQLite</a> with focus on “if you need a library for doing data analysis, and you want SQL, then here you go”.<br>
 DuckDB's use cases can be split into roughly three major categories. Namely, DuckDB can be used for interactive data analysis by a user (“data science”) and as pipeline component for automated data processing (“data enginereering”).
 <br>Kinda.. like the SC relations library?<br><br><br>
@@ -64,7 +48,7 @@ FlightDate,UniqueCarrier,OriginCityName,DestCityName
 1988-01-01,AA,"New York, NY","Los Angeles, CA"
 1988-01-02,AA,"New York, NY","Los Angeles, CA"
 1988-01-03,AA,"New York, NY","Los Angeles, CA"
-<br>Record-style (useful when there are many columns):<br>duckdb -line -c "select * from 'https://duckdb.org/data/flights.csv'"
+<br>Record-style (useful when there are many columns):<br>$ duckdb -line -c "select * from 'https://duckdb.org/data/flights.csv'"
 
     FlightDate = 1988-01-01
  UniqueCarrier = AA
@@ -80,22 +64,45 @@ OriginCityName = New York, NY
  UniqueCarrier = AA
 OriginCityName = New York, NY
   DestCityName = Los Angeles, CA
-<br>JSON:<br>duckdb -json -c "select * from 'https://duckdb.org/data/flights.csv'"
+<br>JSON:<br>$ duckdb -json -c "select * from 'https://duckdb.org/data/flights.csv'"
 [{"FlightDate":"1988-01-01","UniqueCarrier":"AA","OriginCityName":"New York, NY","DestCityName":"Los Angeles, CA"},
 {"FlightDate":"1988-01-02","UniqueCarrier":"AA","OriginCityName":"New York, NY","DestCityName":"Los Angeles, CA"},
 {"FlightDate":"1988-01-03","UniqueCarrier":"AA","OriginCityName":"New York, NY","DestCityName":"Los Angeles, CA"}]
-<br><br><br>-- With column type autodetection
+<br><br><br>SELECT from CSV:<br>-- With column type autodetection
 select * from 'data.csv';
 
 -- Or using text for everything
 select * from read_csv('data.csv', all_varchar=true);
-<br><br>attach 'dbname=DATABASE_NAME user=USER host=HOST port=PORT'
+<br>Select from multiple CSVs (even if they have different sets of columns):<br>select * from read_csv('2024*/*.csv', union_by_name=true);
+<br>Save loaded CSV as a table:<br>create table data as from 'data.csv';
+<br><br>attach 'dbname=DATABASE user=USER host=HOST port=PORT'
   as db (type postgres, read_only);
 
 select * from db.table_name;
 <br>If the remote database only allows localhost connections, forward it to the local machine first:<br># Makes the DB available at localhost:3333 as long as this 'ssh' is running
 ssh user@server -L 3333:localhost:$REMOTE_DB_PORT
-]]></description><link>https://notes.artyom.me/manuals/software/duckdb.html</link><guid isPermaLink="false">Manuals/Software/DuckDB.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 12:55:24 GMT</pubDate></item><item><title><![CDATA[Jujutsu]]></title><description><![CDATA[ 
+<br><br>DuckDB has some nice SQL syntax extensions.<br><br>You don’t need "Foo".<br>FROM data
+SELECT Portfolio, Currency
+<br><br>Write your queries like a pipeline.<br>FROM data
+SELECT col1, col2
+WHERE ...
+]]></description><link>https://notes.artyom.me/manuals/software/duckdb.html</link><guid isPermaLink="false">Manuals/Software/DuckDB.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:37:49 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
+ <br>See the sidebar for the list of notes.<br>]]></description><link>https://notes.artyom.me/index.html</link><guid isPermaLink="false">index.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:19:48 GMT</pubDate></item><item><title><![CDATA[Regexes]]></title><description><![CDATA[ 
+ <br><br><a data-tooltip-position="top" aria-label="https://regexr.com" rel="noopener nofollow" class="external-link" href="https://regexr.com" target="_blank">regexr.com</a> supports:<br>
+<br>JS regexes
+<br>PCRE regexes
+<br>Replacement
+<br><br><br>
+<br>~ Apparenty VSCode supports multiline search now (with Shift+Enter), gotta check
+<br><br>
+<br>Multiline matches
+]]></description><link>https://notes.artyom.me/manuals/dev/regexes.html</link><guid isPermaLink="false">Manuals/Dev/Regexes.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Mon, 25 Nov 2024 20:16:07 GMT</pubDate></item><item><title><![CDATA[Shell scripting]]></title><description><![CDATA[ 
+ <br><br><br>Globs are not expanded when assigning vars.]]></description><link>https://notes.artyom.me/manuals/dev/shell-scripting.html</link><guid isPermaLink="false">Manuals/Dev/Shell scripting.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 10:38:19 GMT</pubDate></item><item><title><![CDATA[SQL]]></title><description><![CDATA[ 
+ <br><br>Use <a data-href="DuckDB" href="https://notes.artyom.me/manuals/software/duckdb.html" class="internal-link" target="_self" rel="noopener nofollow">DuckDB</a>:<br>duckdb -csv -c "$(cat &lt;&lt;EOF
+  select * from 'data.csv'
+EOF
+)"
+<br><br><br><br>The decimal type is a decimal floating point type.<br>Example: decimal(38,19) gives you 38 total digits, out of which 19 are after the point.]]></description><link>https://notes.artyom.me/manuals/dev/sql.html</link><guid isPermaLink="false">Manuals/Dev/SQL.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:06:03 GMT</pubDate></item><item><title><![CDATA[Jujutsu]]></title><description><![CDATA[ 
  <br><br>
 <br>Brew: brew install jj
 <br>Nix: nix profile install nixpkgs#jujutsu
