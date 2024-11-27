@@ -1,6 +1,6 @@
 {
   "vaultName": "Main",
-  "lastExport": 1732703896169,
+  "lastExport": 1732712179074,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon code-styler code-styler-style-inline code-styler-gutter-highlight background-settings-workplace-theme-light-in-the-note background-settings-workplace-theme-dark-in-the-sky background-image-settings-markdown-page-transparent notebook-liked-markdown-page-grid-notebook-1 panel-page-bg-theme-light-wall panel-page-bg-theme-dark-plant layout-style-options-default h2-toggle-underline h3-toggle-underline h4-toggle-underline bt-default-unordered-list default-ol-list-marker list-no-border bt-connected-indent-hover bt-colorful-connected-indent-hover folder-icons remove-arrow bt-toggle-colorful-folder folder-style-change-options-colorful-border folder-colorful-six table-width-100 tag-default admonition-bg-color-same style-options-for-admonition-plugin style-options-for-buttons-plugin dataview-list-style-pacman memos-banner-gradient thino-frosted-style thino-background-default quiet-outline-optimize code-theme-bt-default whole-code-wrap",
   "useCustomHeadContent": false,
@@ -8,7 +8,7 @@
   "files": [
     "Manuals/Software/Atuin.md",
     "Manuals/Software/d2.md",
-    "Manuals/Software/duckdb.md",
+    "Manuals/Software/DuckDB.md",
     "Manuals/Software/Jujutsu.md",
     "Manuals/Software/Mermaid.md",
     "Manuals/Software/Nix.md",
@@ -24,7 +24,6 @@
     "Manuals/Regexes.md",
     "Manuals/Shell scripting.md",
     "Manuals/SQL.md",
-    "lib/media/pasted-image-20241123142910.png",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
     "lib/fonts/2d5198822ab091ce4305.woff2",
@@ -49,7 +48,8 @@
     "lib/styles/global-variable-styles.css",
     "lib/styles/supported-plugins.css",
     "lib/styles/main-styles.css",
-    "lib/styles/snippets.css"
+    "lib/styles/snippets.css",
+    "lib/media/pasted-image-20241123142910.png"
   ],
   "mainDependencies": [
     "lib/fonts/94f2f163d4b698242fef.otf",
@@ -91,15 +91,9 @@
       "exportedPath": "manuals/software/d2.html",
       "dependencies": []
     },
-    "Manuals/Software/duckdb.md": {
-      "modifiedTime": 1732702816629,
-      "sourceSize": 459,
-      "exportedPath": "manuals/software/duckdb.html",
-      "dependencies": []
-    },
     "Manuals/Software/Jujutsu.md": {
-      "modifiedTime": 1732703896169,
-      "sourceSize": 2512,
+      "modifiedTime": 1732712179074,
+      "sourceSize": 2451,
       "exportedPath": "manuals/software/jujutsu.html",
       "dependencies": []
     },
@@ -184,97 +178,97 @@
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 15470,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
@@ -310,13 +304,13 @@
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
@@ -328,37 +322,37 @@
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 131021,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 853897,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1732703896169,
-      "sourceSize": 293,
+      "modifiedTime": 1732712179074,
+      "sourceSize": 310,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 144,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
     "lib/styles/snippets.css": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 243,
       "exportedPath": "lib/styles/snippets.css",
       "dependencies": []
@@ -370,21 +364,27 @@
       "dependencies": []
     },
     "Manuals/Shell scripting.md": {
-      "modifiedTime": 1732703896169,
-      "sourceSize": 71,
+      "modifiedTime": 1732712179074,
+      "sourceSize": 74,
       "exportedPath": "manuals/shell-scripting.html",
       "dependencies": []
     },
     "Manuals/SQL.md": {
-      "modifiedTime": 1732703896169,
-      "sourceSize": 625,
+      "modifiedTime": 1732712179074,
+      "sourceSize": 626,
       "exportedPath": "manuals/sql.html",
       "dependencies": []
     },
     "lib/styles/other-plugins.css": {
-      "modifiedTime": 1732703896169,
+      "modifiedTime": 1732712179074,
       "sourceSize": 47888,
       "exportedPath": "lib/styles/other-plugins.css",
+      "dependencies": []
+    },
+    "Manuals/Software/DuckDB.md": {
+      "modifiedTime": 1732712179074,
+      "sourceSize": 5150,
+      "exportedPath": "manuals/software/duckdb.html",
       "dependencies": []
     }
   }
