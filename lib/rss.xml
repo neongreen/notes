@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[vault]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.png</url><title>vault</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 27 Nov 2024 10:20:21 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 27 Nov 2024 10:20:16 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Atuin]]></title><description><![CDATA[ 
+ <br><br>nix profile install nixpkgs#atuin
+<br>I haven’t tried it with bash, only zsh. For zsh:<br>echo 'eval "$(atuin init zsh --disable-up-arrow)"' &gt;&gt; ~/.zshrc
+<br>And then import history:<br>atuin import auto
+]]></description><link>manuals/software/atuin.html</link><guid isPermaLink="false">Manuals/Software/Atuin.md</guid><pubDate>Wed, 27 Nov 2024 10:20:18 GMT</pubDate></item><item><title><![CDATA[d2]]></title><description><![CDATA[ 
+ <br>Diagram renderer, similar to <a data-href="Mermaid" href="manuals/software/mermaid.html" class="internal-link" target="_self" rel="noopener nofollow">Mermaid</a> but (looks like) it’s better maintained and has nicer themes. Also doesn’t require JS/Python.<br><br><br>nix profile install nixpkgs#{d2,source-sans-pro,source-code-pro,imagemagick}
+<br><br>There’s also a VSCode extension with autoformatting and syntax highlighting.<br><br><br>d2 foo.d2 &amp;&amp; magick -background none -size x1080 foo.svg foo.png
+<br>
+<br>~ <a data-href="2024-11-24" href="2024-11-24" class="internal-link" target="_self" rel="noopener nofollow">2024-11-24</a> magick uses librsvg/inkscape by default if it can find them
+<br>~ Somehow things are blurry at x1080 (in a good way) but not at x1000 for example, idk why
+<br><br><br>You didn’t install the fonts. Or actually maybe you used the terminal theme (which forces mono font rendering, which is hacky).<br><br><br><a data-href="rsvg-convert" href="manuals/software/rsvg-convert.html" class="internal-link" target="_self" rel="noopener nofollow">rsvg-convert</a> doesn’t support foreignObject (HTML inserts in SVG).]]></description><link>manuals/software/d2.html</link><guid isPermaLink="false">Manuals/Software/d2.md</guid><pubDate>Wed, 27 Nov 2024 09:58:22 GMT</pubDate></item><item><title><![CDATA[duckdb]]></title><description><![CDATA[ 
+ <br>Looks like a more modern <a data-href="SQLite" href="SQLite" class="internal-link" target="_self" rel="noopener nofollow">SQLite</a> with focus on “if you need a library for doing data analysis, and you want SQL, then here you go”.<br>
+DuckDB's use cases can be split into roughly three major categories. Namely, DuckDB can be used for interactive data analysis by a user (“data science”) and as pipeline component for automated data processing (“data enginereering”).
+<br>Kinda.. like the SC relations library?]]></description><link>manuals/software/duckdb.html</link><guid isPermaLink="false">Manuals/Software/duckdb.md</guid><pubDate>Mon, 25 Nov 2024 17:31:58 GMT</pubDate></item><item><title><![CDATA[Jujutsu]]></title><description><![CDATA[ 
+ <br><br>
+<br>Brew: brew install jj
+<br>Nix: nix profile install nixpkgs#jujutsu
+<br><br><br>
+<br>jj st — show files in the current commit, and conflicting bookmarks
+
+<br>jj st path1 path2 ... — filter by folder
+
+
+<br><br><br>$ jj log -T 'commit_id ++ "\n"' --no-graph -r main::
+
+4eb5e51f1364c952ba41f79780be4aa438cd3c6d
+5033fc20524e1340a90f0167f9b6ff0a91da0583
+b43602bc767313d05efca8d26981bdb786eef688
+92eeb52154d882b3dd37c2949a997ec58cade369
+510f3a4dea47043141d4da36f5620fc3d76a1142
+a8f81f7dfc82b017efb7eb023723e2673c354397
+c0a9e20222b5cbcd3f08c1e5219cbec114fab565
+<br><br>
+<br>
+jj ci — create a new commit
+
+<br>jj ci path1 path2 ... — create a new parent commit with only those changes
+<br>jj ci -i — interactively choose what will go into the parent
+
+
+<br>
+jj squash — move all changes into the parent
+
+<br>jj squash path1 path2 ... — squash only given paths
+<br>jj squash -i — choose which changes to move
+
+
+<br>
+jj abandon — delete current commit
+
+<br>jj abandon &lt;REV&gt; ... — delete a bunch of commits
+<br>jj abandon --restore-descendants — delete commits without changing their children’s snapshots
+
+
+<br>
+jj split
+
+<br>jj split -r &lt;REV&gt; — split a commit into two, interactively
+<br>jj split -r &lt;REV&gt; path1 path2 ... — split out a bunch of files into a parent commit
+
+
+<br>
+jj diffedit
+
+<br>jj diffedit -r &lt;REV&gt; — delete some changes from a commit
+<br>jj diffedit -r &lt;REV&gt; --restore-descendants — delete changes from a commit, but keep them in the children’s snapshots
+
+
+<br><br><br>If you found a snapshot with jj evolog and want to insert it before change C (because change C did too many things and you want to split it)<br>
+<br>Before: A → B → C
+<br>After: A → B → C_old → C
+<br># Save the content into a new change right after
+jj new -A C
+# Overwrite the old change
+jj restore --restore-descendants --from &lt;C_old commit ID&gt; --to C-
+<br><br>(including stuff that Marek is struggling with)<br><br>This happens — probably — when a branch had to be rebased before merge. You need to abandon those commits manually.<br><br><a data-href="2024-11-23" href="daily/2024-11-23.html" class="internal-link" target="_self" rel="noopener nofollow">2024-11-23</a> Renaming a file will lead to conflicts in subsequent commits.<br>This will perhaps get fixed later.]]></description><link>manuals/software/jujutsu.html</link><guid isPermaLink="false">Manuals/Software/Jujutsu.md</guid><pubDate>Wed, 27 Nov 2024 10:20:20 GMT</pubDate></item><item><title><![CDATA[Mermaid]]></title><description><![CDATA[ 
+ <br><br><br>Probably just use imagemagick/<a data-href="rsvg-convert" href="manuals/software/rsvg-convert.html" class="internal-link" target="_self" rel="noopener nofollow">rsvg-convert</a>, same as for <a data-href="d2#Render to .png" href="manuals/software/d2.html#Render_to_.png" class="internal-link" target="_self" rel="noopener nofollow">d2 &gt; Render to .png</a>]]></description><link>manuals/software/mermaid.html</link><guid isPermaLink="false">Manuals/Software/Mermaid.md</guid><pubDate>Mon, 25 Nov 2024 19:12:01 GMT</pubDate></item><item><title><![CDATA[Nix]]></title><description><![CDATA[ 
+ <br><br>The suggested replacement for nix-env -iA.<br>
+<br>Install a package: nix profile install nixpkgs#foo
+]]></description><link>manuals/software/nix.html</link><guid isPermaLink="false">Manuals/Software/Nix.md</guid><pubDate>Sun, 24 Nov 2024 14:04:09 GMT</pubDate></item><item><title><![CDATA[Obsidian]]></title><description><![CDATA[ 
+ <br><br><br>Install the Obsidian extension in Raycast and give it the path to the Obsidian folder (one where vault is located).<br>Then you’ll get:<br><img alt="Pasted image 20241123142910.png" src="lib/media/pasted-image-20241123142910.png" style="width: 500px; max-width: 100%;"><br><br>
+<br>How to change links when headings are renamed, without using Rename this heading...
+<br>How to change heading level automatically when reordering sections
+<br>How to have nice backups (auto-git?)
+
+<br>I want some kind of a general task-runner on mac
+
+
+<br>Callouts are too big
+
+<br>Can use title-only callouts
+
+
+<br><br><br>
+<br><a data-href="2024-11-25" href="2024-11-25" class="internal-link" target="_self" rel="noopener nofollow">2024-11-25</a> Solution: disable the Minimal theme
+]]></description><link>manuals/software/obsidian.html</link><guid isPermaLink="false">Manuals/Software/Obsidian.md</guid><pubDate>Wed, 27 Nov 2024 10:20:20 GMT</pubDate><enclosure url="lib/media/pasted-image-20241123142910.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;lib/media/pasted-image-20241123142910.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[RHEL]]></title><description><![CDATA[ 
+ <br><br><br>sudo dnf install -y &lt;package name&gt;
+<br><br>yum provides '*/chsh'
+<br><br><br>chsh -s $(which zsh)
+]]></description><link>manuals/software/rhel.html</link><guid isPermaLink="false">Manuals/Software/RHEL.md</guid><pubDate>Sun, 24 Nov 2024 14:04:23 GMT</pubDate></item><item><title><![CDATA[ripgrep (rg)]]></title><description><![CDATA[ 
+ <br><br><br>rg &lt;pattern with capture groups&gt; -or '$1'
+<br>
+TODO: does this work when there are no matches?
+]]></description><link>manuals/software/ripgrep-(rg).html</link><guid isPermaLink="false">Manuals/Software/ripgrep (rg).md</guid><pubDate>Sat, 23 Nov 2024 21:26:06 GMT</pubDate></item><item><title><![CDATA[rsvg-convert]]></title><description><![CDATA[ 
+ <br><br>
+<br>Nix: nix profile install nixpkgs#librsvg
+]]></description><link>manuals/software/rsvg-convert.html</link><guid isPermaLink="false">Manuals/Software/rsvg-convert.md</guid><pubDate>Mon, 25 Nov 2024 20:18:27 GMT</pubDate></item><item><title><![CDATA[Runme Notebooks]]></title><description><![CDATA[ 
+ <br><br><br>  "workbench.editorAssociations": {
+    "*.md": "default"
+  },
+<br><br>Install the “Jupyter Keys” extension and then manually remove the runme.noop keybindings for A, B, etc.<br><br><br>Solution: Redirect to stdout. <br><br><br>This happens at least on the SC laptop (VSCode connected to local VM). Idk what’s the fix yet.<br><br><a data-tooltip-position="top" aria-label="https://github.com/stateful/vscode-runme/issues/1817" rel="noopener nofollow" class="external-link" href="https://github.com/stateful/vscode-runme/issues/1817" target="_blank">#1817 Make extension setting available to choose default between (non)-interactive</a><br>(Although now I’m not even sure I want non-interactive outputs by default — if saving worked, maybe it’d be fine)]]></description><link>manuals/software/runme-notebooks.html</link><guid isPermaLink="false">Manuals/Software/Runme Notebooks.md</guid><pubDate>Tue, 26 Nov 2024 10:33:43 GMT</pubDate></item><item><title><![CDATA[sd]]></title><description><![CDATA[ 
+ <br>An easy “replace text”. Supports capture groups.<br><br>
+<br>Nix: nix profile install nixpkgs#sd
+<br><br>Simple replace:<br>$ echo '[Google](http://google.com)' | sd 'http:' 'https:'
+[Google](https://google.com)
+<br>With capture groups:<br>$ echo 'Open &lt;https://google.com&gt;' | sd '&lt;(https?://(.+))&gt;' '[$2]($1)'
+Open [google.com](https://google.com)
+]]></description><link>manuals/software/sd.html</link><guid isPermaLink="false">Manuals/Software/sd.md</guid><pubDate>Wed, 27 Nov 2024 10:20:20 GMT</pubDate></item><item><title><![CDATA[strace]]></title><description><![CDATA[ 
+ <br><br><br>strace -f -t -e trace=file &lt;command here&gt;
+]]></description><link>manuals/software/strace.html</link><guid isPermaLink="false">Manuals/Software/strace.md</guid><pubDate>Sun, 24 Nov 2024 14:04:30 GMT</pubDate></item><item><title><![CDATA[VSCode]]></title><description><![CDATA[ 
+ <br><br><br>First of all, enable vim-like keybindings: <a data-href="Runme Notebooks#Enable vim-like keybindings (A, B, etc)" href="manuals/software/runme-notebooks.html#Enable_vim-like_keybindings_(A,_B,_etc)" class="internal-link" target="_self" rel="noopener nofollow">Runme Notebooks &gt; Enable vim-like keybindings (A, B, etc)</a><br><br><br>Use Developer: Toggle Keyboard Shortcuts Troubleshooting]]></description><link>manuals/software/vscode.html</link><guid isPermaLink="false">Manuals/Software/VSCode.md</guid><pubDate>Tue, 26 Nov 2024 19:52:21 GMT</pubDate></item><item><title><![CDATA[zoxide]]></title><description><![CDATA[ 
+ <br>A tool for jumping to paths.<br><br><br>brew install zoxide
+<br>And then add eval "$(zoxide init zsh)" somewhere in the dotfiles<br><br>Defaults:<br>
+<br>z &lt;path&gt; — jump
+<br>zi — show known locations
+<br>I don’t like using my pinky, so I changed it to go and goi.]]></description><link>manuals/software/zoxide.html</link><guid isPermaLink="false">Manuals/Software/zoxide.md</guid><pubDate>Sun, 24 Nov 2024 14:04:31 GMT</pubDate></item></channel></rss>
