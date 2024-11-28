@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Main]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://notes.artyom.me/</link><image><url>https://notes.artyom.me/lib/media/favicon.png</url><title>Main</title><link>https://notes.artyom.me/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 27 Nov 2024 13:39:21 GMT</lastBuildDate><atom:link href="https://notes.artyom.me/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 27 Nov 2024 13:39:20 GMT</pubDate><copyright><![CDATA[Emily]]></copyright><ttl>60</ttl><dc:creator>Emily</dc:creator><item><title><![CDATA[DuckDB]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Main]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://notes.artyom.me/</link><image><url>https://notes.artyom.me/lib/media/favicon.png</url><title>Main</title><link>https://notes.artyom.me/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 28 Nov 2024 01:56:53 GMT</lastBuildDate><atom:link href="https://notes.artyom.me/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 28 Nov 2024 01:56:50 GMT</pubDate><copyright><![CDATA[Emily]]></copyright><ttl>60</ttl><dc:creator>Emily</dc:creator><item><title><![CDATA[DuckDB]]></title><description><![CDATA[ 
  <br>Looks like a more modern <a data-href="SQLite" href="https://notes.artyom.me/SQLite" class="internal-link" target="_self" rel="noopener nofollow">SQLite</a> with focus on “if you need a library for doing data analysis, and you want SQL, then here you go”.<br>
 DuckDB's use cases can be split into roughly three major categories. Namely, DuckDB can be used for interactive data analysis by a user (“data science”) and as pipeline component for automated data processing (“data enginereering”).
 <br>Kinda.. like the SC relations library?<br><br><br>
@@ -68,7 +68,9 @@ OriginCityName = New York, NY
 [{"FlightDate":"1988-01-01","UniqueCarrier":"AA","OriginCityName":"New York, NY","DestCityName":"Los Angeles, CA"},
 {"FlightDate":"1988-01-02","UniqueCarrier":"AA","OriginCityName":"New York, NY","DestCityName":"Los Angeles, CA"},
 {"FlightDate":"1988-01-03","UniqueCarrier":"AA","OriginCityName":"New York, NY","DestCityName":"Los Angeles, CA"}]
-<br><br><br>SELECT from CSV:<br>-- With column type autodetection
+<br><br>Multi-source queries
+You can run JOIN and other queries using all data sources at the same time. Eg. joining a local CSV file with a remote Postgres DB.
+<br><br>SELECT from CSV:<br>-- With column type autodetection
 select * from 'data.csv';
 
 -- Or using text for everything
@@ -83,10 +85,101 @@ select * from db.table_name;
 ssh user@server -L 3333:localhost:$REMOTE_DB_PORT
 <br><br>DuckDB has some nice SQL syntax extensions.<br><br>You don’t need "Foo".<br>FROM data
 SELECT Portfolio, Currency
-<br><br>Write your queries like a pipeline.<br>FROM data
+<br><br>Write your queries like a pipeline:<br>FROM data
 SELECT col1, col2
 WHERE ...
-]]></description><link>https://notes.artyom.me/manuals/software/duckdb.html</link><guid isPermaLink="false">Manuals/Software/DuckDB.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:39:11 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
+<br>SELECT * can be skipped:<br>FROM data;
+]]></description><link>https://notes.artyom.me/manuals/software/duckdb.html</link><guid isPermaLink="false">Manuals/Software/DuckDB.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:47:08 GMT</pubDate></item><item><title><![CDATA[VSCode]]></title><description><![CDATA[ 
+ <br><br><br>First of all, enable vim-like keybindings: <a data-href="Runme Notebooks#Enable vim-like keybindings (A, B, etc)" href="https://notes.artyom.me/manuals/software/runme-notebooks.html#Enable_vim-like_keybindings_(A,_B,_etc)" class="internal-link" target="_self" rel="noopener nofollow">Runme Notebooks &gt; Enable vim-like keybindings (A, B, etc)</a><br><br>Simple: ⌘K ⌘S and edit.<br>Advanced:<br>Rules are evaluated from bottom to top. (Not from top to bottom!). See <a data-tooltip-position="top" aria-label="https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization" target="_blank">Visual Studio Code Key Bindings</a>:<br>
+
+<br>the rules are evaluated from bottom to top.
+<br>the first rule that matches, both the key and in terms of when, is accepted.
+<br>no more rules are processed.
+<br>if a rule is found and has a command set, the command is executed.
+
+<br>Useful commands:<br>
+<br>Developer: Toggle Keyboard Shortcuts Troubleshooting shows you which shorcut rule was matched.
+<br>Developer: Inspect Context Keys will show everything you can use inside of when.
+
+<br>You need to open the devtools (Developer: Toggle Developer Tools) for that.
+<br>See <a data-tooltip-position="top" aria-label="https://code.visualstudio.com/api/references/when-clause-contexts" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/api/references/when-clause-contexts" target="_blank">when clause contexts | Visual Studio Code Extension API</a> for the most common when variables.
+
+
+<br><br>Execute a DB query on ⌘Enter, but only when SQLTools is open: <br>  {
+    "key": "cmd+enter",
+    "command": "sqltools.executeCurrentQuery",
+    "when": "editorTextFocus &amp;&amp; sqltools.file.connectionAttached"
+  }
+<br><br><br><br>
+<br>$ Can show the results as a table
+<br>$ Has autocomplete and “Run selected query”
+
+<br>(<a data-href="#^d81100" href="https://notes.artyom.me/about:blank#^d81100" class="internal-link" target="_self" rel="noopener nofollow">^d81100</a> shows how the selected query thing is set up)
+<br>? Autocomplete doesn’t always work (eg. for p.)
+<br>? Autocomplete doesn’t quote column names where it should
+
+
+<br><img alt="Pasted image 20241128023911.png" src="https://notes.artyom.me/lib/media/pasted-image-20241128023911.png"><br><br>
+<br>? How can I show all potentially matching shortcuts and an explanation of why they weren’t matched?
+<br>? I want to define custom commands like “select paragraph, add ; to the end if it’s not there, send to the terminal”
+
+<br>Ideally with JS logic in them!
+
+
+]]></description><link>https://notes.artyom.me/manuals/software/vscode.html</link><guid isPermaLink="false">Manuals/Software/VSCode.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:50:30 GMT</pubDate><enclosure url="https://notes.artyom.me/lib/media/pasted-image-20241128023911.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://notes.artyom.me/lib/media/pasted-image-20241128023911.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Aggregation]]></title><description><![CDATA[ 
+ <br><br><br>See <a data-href="devdocs — API Documentation Browser" href="https://notes.artyom.me/clippings/devdocs-—-api-documentation-browser.html" class="internal-link" target="_self" rel="noopener nofollow">devdocs — API Documentation Browser</a>.<br>Can scrape web pages and present them as unified interface with search.]]></description><link>https://notes.artyom.me/radar/docs/aggregation.html</link><guid isPermaLink="false">Radar/Docs/Aggregation.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:54:50 GMT</pubDate></item><item><title><![CDATA[DB subscription]]></title><description><![CDATA[ 
+ <br>I want to subscribe to DB data in my frontend and listen to updates.<br><br><br><a rel="noopener nofollow" class="external-link" href="https://rethinkdb.com/" target="_blank">https://rethinkdb.com/</a><br>Doesn’t support Postgres. 26k stars on GH tho<br>Perhaps it’s useful when you need really realtime things? Like collaborative editing / chat?<br><br><br><a data-tooltip-position="top" aria-label="https://ably.com/docs/products/livesync" rel="noopener nofollow" class="external-link" href="https://ably.com/docs/products/livesync" target="_blank">Ably LiveSync | Ably Realtime</a> looks ok but postgres is in ALPHA (not even in beta), <a data-href="2024-11-28" href="https://notes.artyom.me/2024-11-28" class="internal-link" target="_self" rel="noopener nofollow">2024-11-28</a> apparently fairly new (comments on HN from founders from 7mo ago)]]></description><link>https://notes.artyom.me/radar/js/db-subscription.html</link><guid isPermaLink="false">Radar/JS/DB subscription.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:15:09 GMT</pubDate></item><item><title><![CDATA[GraphQL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>? <a data-href="2024-11-26" href="https://notes.artyom.me/daily/2024-11-26.html" class="internal-link" target="_self" rel="noopener nofollow">2024-11-26</a> Andrey reports that <a data-href="Pothos" href="https://notes.artyom.me/Pothos" class="internal-link" target="_self" rel="noopener nofollow">Pothos</a> is a lot of pain
+
+<br>“everything is possible but hard”
+
+
+]]></description><link>https://notes.artyom.me/radar/js/graphql.html</link><guid isPermaLink="false">Radar/JS/GraphQL.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Tue, 26 Nov 2024 20:31:36 GMT</pubDate></item><item><title><![CDATA[Diagrams]]></title><description><![CDATA[ 
+ <br><br>
+<br><a data-tooltip-position="top" aria-label="https://xosh.org/text-to-diagram/" rel="noopener nofollow" class="external-link" href="https://xosh.org/text-to-diagram/" target="_blank">Online text to diagram tools | XOSH.ORG</a>
+<br><a data-tooltip-position="top" aria-label="https://text-to-diagram.com" rel="noopener nofollow" class="external-link" href="https://text-to-diagram.com" target="_blank">text-to-diagram.com</a>
+<br><a data-tooltip-position="top" aria-label="https://kroki.io" rel="noopener nofollow" class="external-link" href="https://kroki.io" target="_blank">kroki.io</a>
+<br><br><br>
+<br>$ More powerful syntax than <a data-href="Mermaid" href="https://notes.artyom.me/manuals/software/mermaid.html" class="internal-link" target="_self" rel="noopener nofollow">Mermaid</a> (eg. “←” arrows)
+<br>$ Supports scenarios/views (generating several diagrams from one)
+<br>$ Single binary (no Python/JS needed)
+<br>? Cannot generate SVG natively (have to experience the SVG → PNG pain)
+<br>? I have to fight with the layout a lot, same as <a data-href="Mermaid" href="https://notes.artyom.me/manuals/software/mermaid.html" class="internal-link" target="_self" rel="noopener nofollow">Mermaid</a>
+
+<br>Can’t set direction per-container (except in their paid Tala layout engine)
+<br>Can’t specify which side the arrows should come from/to
+
+
+<br><br><br>
+<br>? Looks ancient
+<br>~ Apparently controlling layout works better
+<br><img alt="Pasted image 20241125221825.png" src="https://notes.artyom.me/lib/media/pasted-image-20241125221825.png"><br><br><br>Not as good as <a data-href="d2" href="https://notes.artyom.me/manuals/software/d2.html" class="internal-link" target="_self" rel="noopener nofollow">d2</a>, while having all the same problems.<br>
+<br>$ Supports a ton of different diagrams (git branches, etc)
+<br>$ The most popular thing, Obsidian and GitHub support it out of the box
+<br>! I literally couldn’t make it put one subgraph under another, like, this didn’t work:
+<br># impossible :(
+direction: TD
+before: a --&gt; b --&gt; c
+after: a --&gt; b --&gt; c --&gt; d
+<br><br>
+<br>$ Nice syntax
+<br>! Since it’s based on Dagre (like Mermaid and everyone else), it can’t do the “subgraph under another” thing either
+<br><img alt="Pasted image 20241125220459.png" src="https://notes.artyom.me/lib/media/pasted-image-20241125220459.png"><br><br><a data-href="2024-11-21" href="https://notes.artyom.me/2024-11-21" class="internal-link" target="_self" rel="noopener nofollow">2024-11-21</a> The icons are very nice, but I couldn’t control the layout and after trying to draw a simple files flow I abandoned it in favor of <a data-href="#d2" href="https://notes.artyom.me/about:blank#d2" class="internal-link" target="_self" rel="noopener nofollow">d2</a>.]]></description><link>https://notes.artyom.me/radar/diagrams.html</link><guid isPermaLink="false">Radar/Diagrams.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:56:03 GMT</pubDate><enclosure url="https://notes.artyom.me/lib/media/pasted-image-20241125221825.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://notes.artyom.me/lib/media/pasted-image-20241125221825.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Video calls]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>$ Works when other things don’t work
+
+<br>Eg. audio is randomly not working in FaceTime and Google Meet with some people
+
+
+<br>! Doesn’t have remote control
+<br><br><br>
+<br>$ No echo (unlike Skype)
+<br>$ Can hide myself
+<br><br><br>
+<br>? Echo
+<br>! Can’t hide myself
+]]></description><link>https://notes.artyom.me/radar/video-calls.html</link><guid isPermaLink="false">Radar/Video calls.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:55:31 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
  <br>See the sidebar for the list of notes.<br>]]></description><link>https://notes.artyom.me/index.html</link><guid isPermaLink="false">index.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:19:48 GMT</pubDate></item><item><title><![CDATA[Regexes]]></title><description><![CDATA[ 
  <br><br><a data-tooltip-position="top" aria-label="https://regexr.com" rel="noopener nofollow" class="external-link" href="https://regexr.com" target="_blank">regexr.com</a> supports:<br>
 <br>JS regexes
@@ -218,8 +311,7 @@ TODO: does this work when there are no matches?
   },
 <br><br>Install the “Jupyter Keys” extension and then manually remove the runme.noop keybindings for A, B, etc.<br><br><br>Solution: Redirect to stdout. <br><br><br>This happens at least on the SC laptop (VSCode connected to local VM). Idk what’s the fix yet.<br><br><a data-tooltip-position="top" aria-label="https://github.com/stateful/vscode-runme/issues/1817" rel="noopener nofollow" class="external-link" href="https://github.com/stateful/vscode-runme/issues/1817" target="_blank">#1817 Make extension setting available to choose default between (non)-interactive</a><br>(Although now I’m not even sure I want non-interactive outputs by default — if saving worked, maybe it’d be fine)]]></description><link>manuals/software/runme-notebooks.html</link><guid isPermaLink="false">Manuals/Software/Runme Notebooks.md</guid><pubDate>Tue, 26 Nov 2024 10:33:43 GMT</pubDate></item><item><title><![CDATA[strace]]></title><description><![CDATA[ 
  <br><br><br>strace -f -t -e trace=file &lt;command here&gt;
-]]></description><link>manuals/software/strace.html</link><guid isPermaLink="false">Manuals/Software/strace.md</guid><pubDate>Sun, 24 Nov 2024 14:04:30 GMT</pubDate></item><item><title><![CDATA[VSCode]]></title><description><![CDATA[ 
- <br><br><br>First of all, enable vim-like keybindings: <a data-href="Runme Notebooks#Enable vim-like keybindings (A, B, etc)" href="manuals/software/runme-notebooks.html#Enable_vim-like_keybindings_(A,_B,_etc)" class="internal-link" target="_self" rel="noopener nofollow">Runme Notebooks &gt; Enable vim-like keybindings (A, B, etc)</a><br><br><br>Use Developer: Toggle Keyboard Shortcuts Troubleshooting]]></description><link>manuals/software/vscode.html</link><guid isPermaLink="false">Manuals/Software/VSCode.md</guid><pubDate>Tue, 26 Nov 2024 19:52:21 GMT</pubDate></item><item><title><![CDATA[zoxide]]></title><description><![CDATA[ 
+]]></description><link>manuals/software/strace.html</link><guid isPermaLink="false">Manuals/Software/strace.md</guid><pubDate>Sun, 24 Nov 2024 14:04:30 GMT</pubDate></item><item><title><![CDATA[zoxide]]></title><description><![CDATA[ 
  <br>A tool for jumping to paths.<br><br><br>brew install zoxide
 <br>And then add eval "$(zoxide init zsh)" somewhere in the dotfiles<br><br>Defaults:<br>
 <br>z &lt;path&gt; — jump
