@@ -1,4 +1,18 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Main]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://notes.artyom.me/</link><image><url>https://notes.artyom.me/lib/media/favicon.png</url><title>Main</title><link>https://notes.artyom.me/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 28 Nov 2024 02:04:17 GMT</lastBuildDate><atom:link href="https://notes.artyom.me/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 28 Nov 2024 02:04:09 GMT</pubDate><copyright><![CDATA[Emily]]></copyright><ttl>60</ttl><dc:creator>Emily</dc:creator><item><title><![CDATA[Regexes]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Main]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://notes.artyom.me/</link><image><url>https://notes.artyom.me/lib/media/favicon.png</url><title>Main</title><link>https://notes.artyom.me/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sat, 30 Nov 2024 09:11:33 GMT</lastBuildDate><atom:link href="https://notes.artyom.me/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sat, 30 Nov 2024 09:11:22 GMT</pubDate><copyright><![CDATA[Emily]]></copyright><ttl>60</ttl><dc:creator>Emily</dc:creator><item><title><![CDATA[Shell scripting]]></title><description><![CDATA[ 
+ <br><br><br>Globs are not expanded when assigning vars.<br><br><br>
+tail -f file | grep thing will work totally fine, but then when you add the second grep, it stops working!! The reason for this is that the way grep handles buffering depends on whether it’s writing to a terminal or not.
+Here’s how grep (and many other programs) decides to buffer its output:
+Check if stdout is a terminal or not using the isatty function<br>
+If it’s a terminal, use line buffering (print every line immediately as soon as you have it)<br>
+Otherwise, use “block buffering” – only print data if you have at least 8KB or so of data to print
+<br><br>
+unbuffer program will force the program’s output to be a TTY, which means that it’ll behave the way it normally would on a TTY (less buffering, colour output, etc).
+]]></description><link>https://notes.artyom.me/manuals/dev/shell-scripting.html</link><guid isPermaLink="false">Manuals/Dev/Shell scripting.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sat, 30 Nov 2024 09:11:23 GMT</pubDate></item><item><title><![CDATA[SQL]]></title><description><![CDATA[ 
+ <br><br>Use <a data-href="DuckDB" href="https://notes.artyom.me/manuals/software/duckdb.html" class="internal-link" target="_self" rel="noopener nofollow">DuckDB</a>:<br>duckdb -csv -c "$(cat &lt;&lt;EOF
+  select * from 'data.csv'
+EOF
+)"
+<br><br><br><br>The decimal type is a decimal floating point type.<br>Example: decimal(38,19) gives you 38 total digits, out of which 19 are after the point.]]></description><link>https://notes.artyom.me/manuals/dev/sql.html</link><guid isPermaLink="false">Manuals/Dev/SQL.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:06:03 GMT</pubDate></item><item><title><![CDATA[Regexes]]></title><description><![CDATA[ 
  <br><br><a data-tooltip-position="top" aria-label="https://regexr.com" rel="noopener nofollow" class="external-link" href="https://regexr.com" target="_blank">regexr.com</a> supports:<br>
 <br>JS regexes
 <br>PCRE regexes
@@ -7,23 +21,208 @@
 <br>~ Apparenty VSCode supports multiline search now (with Shift+Enter), gotta check
 <br><br>
 <br>Multiline matches
-]]></description><link>https://notes.artyom.me/manuals/dev/regexes.html</link><guid isPermaLink="false">Manuals/Dev/Regexes.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Mon, 25 Nov 2024 20:16:07 GMT</pubDate></item><item><title><![CDATA[Shell scripting]]></title><description><![CDATA[ 
- <br><br><br>Globs are not expanded when assigning vars.]]></description><link>https://notes.artyom.me/manuals/dev/shell-scripting.html</link><guid isPermaLink="false">Manuals/Dev/Shell scripting.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 10:38:19 GMT</pubDate></item><item><title><![CDATA[SQL]]></title><description><![CDATA[ 
- <br><br>Use <a data-href="DuckDB" href="https://notes.artyom.me/manuals/software/duckdb.html" class="internal-link" target="_self" rel="noopener nofollow">DuckDB</a>:<br>duckdb -csv -c "$(cat &lt;&lt;EOF
-  select * from 'data.csv'
-EOF
-)"
-<br><br><br><br>The decimal type is a decimal floating point type.<br>Example: decimal(38,19) gives you 38 total digits, out of which 19 are after the point.]]></description><link>https://notes.artyom.me/manuals/dev/sql.html</link><guid isPermaLink="false">Manuals/Dev/SQL.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:06:03 GMT</pubDate></item><item><title><![CDATA[Atuin]]></title><description><![CDATA[ 
- <br><br>nix profile install nixpkgs#atuin
-<br>I haven’t tried it with bash, only zsh. For zsh:<br>echo 'eval "$(atuin init zsh --disable-up-arrow)"' &gt;&gt; ~/.zshrc
-<br>And then import history:<br>atuin import auto
-]]></description><link>https://notes.artyom.me/manuals/software/atuin.html</link><guid isPermaLink="false">Manuals/Software/Atuin.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 10:20:18 GMT</pubDate></item><item><title><![CDATA[d2]]></title><description><![CDATA[ 
+]]></description><link>https://notes.artyom.me/manuals/dev/regexes.html</link><guid isPermaLink="false">Manuals/Dev/Regexes.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Mon, 25 Nov 2024 20:16:07 GMT</pubDate></item><item><title><![CDATA[zoxide]]></title><description><![CDATA[ 
+ <br>A tool for jumping to paths.<br><br><br>brew install zoxide
+<br>And then add eval "$(zoxide init zsh)" somewhere in the dotfiles<br><br>Defaults:<br>
+<br>z &lt;path&gt; — jump
+<br>zi — show known locations
+<br>I don’t like using my pinky, so I changed it to go and goi.]]></description><link>https://notes.artyom.me/manuals/software/zoxide.html</link><guid isPermaLink="false">Manuals/Software/zoxide.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sun, 24 Nov 2024 14:04:31 GMT</pubDate></item><item><title><![CDATA[strace]]></title><description><![CDATA[ 
+ <br><br><br>strace -f -t -e trace=file &lt;command here&gt;
+]]></description><link>https://notes.artyom.me/manuals/software/strace.html</link><guid isPermaLink="false">Manuals/Software/strace.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sun, 24 Nov 2024 14:04:30 GMT</pubDate></item><item><title><![CDATA[sd]]></title><description><![CDATA[ 
+ <br>An easy “replace text”. Supports capture groups.<br><br>
+<br>Nix: nix profile install nixpkgs#sd
+<br><br>Simple replace:<br>$ echo '[Google](http://google.com)' | sd 'http:' 'https:'
+[Google](https://google.com)
+<br>With capture groups:<br>$ echo 'Open &lt;https://google.com&gt;' | sd '&lt;(https?://(.+))&gt;' '[$2]($1)'
+Open [google.com](https://google.com)
+]]></description><link>https://notes.artyom.me/manuals/software/sd.html</link><guid isPermaLink="false">Manuals/Software/sd.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 10:20:20 GMT</pubDate></item><item><title><![CDATA[rsvg-convert]]></title><description><![CDATA[ 
+ <br><br>
+<br>Nix: nix profile install nixpkgs#librsvg
+]]></description><link>https://notes.artyom.me/manuals/software/rsvg-convert.html</link><guid isPermaLink="false">Manuals/Software/rsvg-convert.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Mon, 25 Nov 2024 20:18:27 GMT</pubDate></item><item><title><![CDATA[ripgrep (rg)]]></title><description><![CDATA[ 
+ <br><br><br>rg &lt;pattern with capture groups&gt; -or '$1'
+<br>
+TODO: does this work when there are no matches?
+]]></description><link>https://notes.artyom.me/manuals/software/ripgrep-(rg).html</link><guid isPermaLink="false">Manuals/Software/ripgrep (rg).md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sat, 23 Nov 2024 21:26:06 GMT</pubDate></item><item><title><![CDATA[d2]]></title><description><![CDATA[ 
  <br>Diagram renderer, similar to <a data-href="Mermaid" href="https://notes.artyom.me/manuals/software/mermaid.html" class="internal-link" target="_self" rel="noopener nofollow">Mermaid</a> but (looks like) it’s better maintained and has nicer themes. Also doesn’t require JS/Python.<br><br><br>nix profile install nixpkgs#{d2,source-sans-pro,source-code-pro,imagemagick}
 <br><br>There’s also a VSCode extension with autoformatting and syntax highlighting.<br><br><br>d2 foo.d2 &amp;&amp; magick -background none -size x1080 foo.svg foo.png
 <br>
 <br>~ <a data-href="2024-11-24" href="https://notes.artyom.me/2024-11-24" class="internal-link" target="_self" rel="noopener nofollow">2024-11-24</a> magick uses librsvg/inkscape by default if it can find them
 <br>~ Somehow things are blurry at x1080 (in a good way) but not at x1000 for example, idk why
-<br><br><br>You didn’t install the fonts. Or actually maybe you used the terminal theme (which forces mono font rendering, which is hacky).<br><br><br><a data-href="rsvg-convert" href="https://notes.artyom.me/manuals/software/rsvg-convert.html" class="internal-link" target="_self" rel="noopener nofollow">rsvg-convert</a> doesn’t support foreignObject (HTML inserts in SVG).]]></description><link>https://notes.artyom.me/manuals/software/d2.html</link><guid isPermaLink="false">Manuals/Software/d2.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 09:58:22 GMT</pubDate></item><item><title><![CDATA[DuckDB]]></title><description><![CDATA[ 
+<br><br><br>You didn’t install the fonts. Or actually maybe you used the terminal theme (which forces mono font rendering, which is hacky).<br><br><br><a data-href="rsvg-convert" href="https://notes.artyom.me/manuals/software/rsvg-convert.html" class="internal-link" target="_self" rel="noopener nofollow">rsvg-convert</a> doesn’t support foreignObject (HTML inserts in SVG).]]></description><link>https://notes.artyom.me/manuals/software/d2.html</link><guid isPermaLink="false">Manuals/Software/d2.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 09:58:22 GMT</pubDate></item><item><title><![CDATA[VSCode]]></title><description><![CDATA[<a class="tag" href="https://notes.artyom.me/?query=tag:wishlist" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#wishlist</a> <a class="tag" href="https://notes.artyom.me/?query=tag:wishlist" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#wishlist</a> <a class="tag" href="https://notes.artyom.me/?query=tag:wishlist" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#wishlist</a> 
+ <br><br><br>First of all, enable vim-like keybindings: <a data-href="Runme Notebooks#Enable vim-like keybindings (A, B, etc)" href="https://notes.artyom.me/manuals/software/runme-notebooks.html#Enable_vim-like_keybindings_(A,_B,_etc)" class="internal-link" target="_self" rel="noopener nofollow">Runme Notebooks &gt; Enable vim-like keybindings (A, B, etc)</a><br><br>Simple: ⌘K ⌘S and edit.<br>Advanced:<br>Rules are evaluated from bottom to top. (Not from top to bottom!). See <a data-tooltip-position="top" aria-label="https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization" target="_blank">Visual Studio Code Key Bindings</a>:<br>
+
+<br>the rules are evaluated from bottom to top.
+<br>the first rule that matches, both the key and in terms of when, is accepted.
+<br>no more rules are processed.
+<br>if a rule is found and has a command set, the command is executed.
+
+<br>Useful commands:<br>
+<br>Developer: Toggle Keyboard Shortcuts Troubleshooting shows you which shorcut rule was matched.
+<br>Developer: Inspect Context Keys will show everything you can use inside of when.
+
+<br>You need to open the devtools (Developer: Toggle Developer Tools) for that.
+<br>See <a data-tooltip-position="top" aria-label="https://code.visualstudio.com/api/references/when-clause-contexts" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/api/references/when-clause-contexts" target="_blank">when clause contexts | Visual Studio Code Extension API</a> for the most common when variables.
+
+
+<br><br>Execute a DB query on ⌘Enter, but only when SQLTools is open: <br>  {
+    "key": "cmd+enter",
+    "command": "sqltools.executeCurrentQuery",
+    "when": "editorTextFocus &amp;&amp; sqltools.file.connectionAttached"
+  }
+<br><br><br><br>
+<br>$ Has autocomplete
+<br>$ Shows table schema on hover
+<br>$ Has SQL notebook support
+<br>~ Idk I didn’t really try it though
+<br><br>
+<br>$ Can show the results as a table
+<br>$ Has autocomplete and “Run selected query”
+
+<br>(<a data-href="#^d81100" href="https://notes.artyom.me/about:blank#^d81100" class="internal-link" target="_self" rel="noopener nofollow">^d81100</a> shows how the selected query thing is set up)
+<br>? Autocomplete doesn’t always work (eg. for p.)
+<br>? Autocomplete doesn’t quote column names where it should
+
+
+<br>? Doesn’t show table schema/info on hover
+<br><img alt="Pasted image 20241128023911.png" src="https://notes.artyom.me/lib/media/pasted-image-20241128023911.png"><br><br><br><br>  {
+    "key": "cmd+shift+0",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "expandLineSelection",
+        "workbench.action.chat.open",
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "#selection Concisely answer the question in the selected text. You are an expert in an IRC chat and you are talking to a peer expert. Don't capitalize sentences or use full stops. Use multiple messages, as you would in IRC. Provide examples where you feel the expert might appreciate them. If the text is a comment, don't put the answer in a comment."
+          }
+        },
+        "workbench.action.chat.submit",
+        "workbench.action.focusActiveEditorGroup",
+        "cursorUndo"
+      ]
+    }
+  }
+<br><br>List of useful commands (for <a data-href="#Shortcut customization" href="https://notes.artyom.me/about:blank#Shortcut_customization" class="internal-link" target="_self" rel="noopener nofollow">Shortcut customization</a>)<br>
+<br>cursorUndo — undoes whatever the cursor did.
+<br>select-paragraph.selectParagraph <a rel="noopener nofollow" class="external-link" href="https://marketplace.visualstudio.com/items?itemName=nachocab.select-paragraph" target="_blank">https://marketplace.visualstudio.com/items?itemName=nachocab.select-paragraph</a>
+<br><br>
+<br>? <a href="https://notes.artyom.me?query=tag:wishlist" class="tag" target="_blank" rel="noopener nofollow">#wishlist</a> How can I show all potentially matching shortcuts and an explanation of why they weren’t matched?
+<br>? <a href="https://notes.artyom.me?query=tag:wishlist" class="tag" target="_blank" rel="noopener nofollow">#wishlist</a> I want to define custom commands like “select paragraph, add ; to the end if it’s not there, send to the terminal”
+
+<br>Ideally with JS logic in them!
+
+
+<br><a href="https://notes.artyom.me?query=tag:wishlist" class="tag" target="_blank" rel="noopener nofollow">#wishlist</a> I’d love smth like <a data-href="Runme Notebooks" href="https://notes.artyom.me/manuals/software/runme-notebooks.html" class="internal-link" target="_self" rel="noopener nofollow">Runme Notebooks</a> but without the cell rendering. Just Markdown with outputs appearing.. somewhere.
+]]></description><link>https://notes.artyom.me/manuals/software/vscode.html</link><guid isPermaLink="false">Manuals/Software/VSCode.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 21:59:01 GMT</pubDate><enclosure url="https://notes.artyom.me/lib/media/pasted-image-20241128023911.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://notes.artyom.me/lib/media/pasted-image-20241128023911.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Runme Notebooks]]></title><description><![CDATA[ 
+ <br><br><br>  "workbench.editorAssociations": {
+    "*.md": "default"
+  },
+<br><br>Install the “Jupyter Keys” extension and then manually remove the runme.noop keybindings for A, B, etc.<br><br><br>Solution: Redirect to stdout. <br><br><br>This happens at least on the SC laptop (VSCode connected to local VM). Idk what’s the fix yet.<br><br><a data-tooltip-position="top" aria-label="https://github.com/stateful/vscode-runme/issues/1817" rel="noopener nofollow" class="external-link" href="https://github.com/stateful/vscode-runme/issues/1817" target="_blank">#1817 Make extension setting available to choose default between (non)-interactive</a><br>(Although now I’m not even sure I want non-interactive outputs by default — if saving worked, maybe it’d be fine)]]></description><link>https://notes.artyom.me/manuals/software/runme-notebooks.html</link><guid isPermaLink="false">Manuals/Software/Runme Notebooks.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 21:00:53 GMT</pubDate></item><item><title><![CDATA[RHEL]]></title><description><![CDATA[ 
+ <br><br><br>sudo dnf install -y &lt;package name&gt;
+<br><br>yum provides '*/chsh'
+<br><br><br>chsh -s $(which zsh)
+]]></description><link>https://notes.artyom.me/manuals/software/rhel.html</link><guid isPermaLink="false">Manuals/Software/RHEL.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sun, 24 Nov 2024 14:04:23 GMT</pubDate></item><item><title><![CDATA[Obsidian]]></title><description><![CDATA[<a class="tag" href="https://notes.artyom.me/?query=tag:wishlist" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#wishlist</a> 
+ <br><br><br>Install the Obsidian extension in Raycast and give it the path to the Obsidian folder (one where vault is located).<br>Then you’ll get:<br><img alt="Pasted image 20241123142910.png" src="https://notes.artyom.me/lib/media/pasted-image-20241123142910.png" style="width: 500px; max-width: 100%;"><br><br>
+<br>How to change links when headings are renamed, without using Rename this heading...
+<br>How to change heading level automatically when reordering sections
+<br>How to have nice backups (auto-git?)
+
+<br>I want some kind of a general task-runner on mac
+
+
+<br>Callouts are too big
+
+<br>Can use title-only callouts
+
+
+<br><br><br>
+<br><a data-href="2024-11-25" href="https://notes.artyom.me/2024-11-25" class="internal-link" target="_self" rel="noopener nofollow">2024-11-25</a> Solution: disable the Minimal theme
+<br><br>
+<br><a href="https://notes.artyom.me?query=tag:wishlist" class="tag" target="_blank" rel="noopener nofollow">#wishlist</a> Easily add footnotes / inline comments, and show them in editing mode
+
+<br>There’s a plugin for footnote popovers, but they only appear in the reading mode
+
+
+]]></description><link>https://notes.artyom.me/manuals/software/obsidian.html</link><guid isPermaLink="false">Manuals/Software/Obsidian.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 22:10:12 GMT</pubDate><enclosure url="https://notes.artyom.me/lib/media/pasted-image-20241123142910.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://notes.artyom.me/lib/media/pasted-image-20241123142910.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Nix]]></title><description><![CDATA[ 
+ <br><br>The suggested replacement for nix-env -iA.<br>
+<br>Install a package: nix profile install nixpkgs#foo
+]]></description><link>https://notes.artyom.me/manuals/software/nix.html</link><guid isPermaLink="false">Manuals/Software/Nix.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sun, 24 Nov 2024 14:04:09 GMT</pubDate></item><item><title><![CDATA[Mermaid]]></title><description><![CDATA[ 
+ <br><br><br>Probably just use imagemagick/<a data-href="rsvg-convert" href="https://notes.artyom.me/manuals/software/rsvg-convert.html" class="internal-link" target="_self" rel="noopener nofollow">rsvg-convert</a>, same as for <a data-href="d2#Render to .png" href="https://notes.artyom.me/manuals/software/d2.html#Render_to_.png" class="internal-link" target="_self" rel="noopener nofollow">d2 &gt; Render to .png</a>]]></description><link>https://notes.artyom.me/manuals/software/mermaid.html</link><guid isPermaLink="false">Manuals/Software/Mermaid.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sat, 30 Nov 2024 09:11:30 GMT</pubDate></item><item><title><![CDATA[Jujutsu]]></title><description><![CDATA[ 
+ <br><br>
+<br>Brew: brew install jj
+<br>Nix: nix profile install nixpkgs#jujutsu
+<br><br><br>
+<br>jj st — show files in the current commit, and conflicting bookmarks
+
+<br>jj st path1 path2 ... — filter by folder
+
+
+<br><br><br>$ jj log -T 'commit_id ++ "\n"' --no-graph -r main::
+
+4eb5e51f1364c952ba41f79780be4aa438cd3c6d
+5033fc20524e1340a90f0167f9b6ff0a91da0583
+b43602bc767313d05efca8d26981bdb786eef688
+92eeb52154d882b3dd37c2949a997ec58cade369
+510f3a4dea47043141d4da36f5620fc3d76a1142
+a8f81f7dfc82b017efb7eb023723e2673c354397
+c0a9e20222b5cbcd3f08c1e5219cbec114fab565
+<br><br>
+<br>
+jj ci — create a new commit
+
+<br>jj ci path1 path2 ... — create a new parent commit with only those changes
+<br>jj ci -i — interactively choose what will go into the parent
+
+
+<br>
+jj squash — move all changes into the parent
+
+<br>jj squash path1 path2 ... — squash only given paths
+<br>jj squash -i — choose which changes to move
+
+
+<br>
+jj abandon — delete current commit
+
+<br>jj abandon &lt;REV&gt; ... — delete a bunch of commits
+<br>jj abandon --restore-descendants — delete commits without changing their children’s snapshots
+
+
+<br>
+jj split
+
+<br>jj split -r &lt;REV&gt; — split a commit into two, interactively
+<br>jj split -r &lt;REV&gt; path1 path2 ... — split out a bunch of files into a parent commit
+
+
+<br>
+jj diffedit
+
+<br>jj diffedit -r &lt;REV&gt; — delete some changes from a commit
+<br>jj diffedit -r &lt;REV&gt; --restore-descendants — delete changes from a commit, but keep them in the children’s snapshots
+
+
+<br><br><br>If you found a snapshot with jj evolog and want to insert it before change C (because change C did too many things and you want to split it)<br>
+<br>Before: A → B → C
+<br>After: A → B → C_old → C
+<br># Save the content into a new change right after
+jj new -A C
+# Overwrite the old change
+jj restore --restore-descendants --from &lt;C_old commit ID&gt; --to C-
+<br><br>Until jj run lands, you can do it manually:<br># Arguments: $REVSET, $COMMAND
+
+# Iterate over changes in reverse order
+for change in $(jj log --reversed -T 'change_id ++ " "' --no-graph -r $REVSET); do
+  echo "Editing $change"
+
+  jj new $change  # Create a commit on top
+  $COMMAND        # Run your command (search and replace or whatever)
+
+  # Squash *without* changing the snapshots of any other commits
+  jj restore --from @ --to @- --restore-descendants  
+done
+<br><br><br>This happens — probably — when a branch had to be rebased before merge. You need to abandon those commits manually.<br><br><a data-href="2024-11-23" href="https://notes.artyom.me/daily/2024-11-23.html" class="internal-link" target="_self" rel="noopener nofollow">2024-11-23</a> Renaming a file will lead to conflicts in subsequent commits.<br>This will perhaps get fixed later.]]></description><link>https://notes.artyom.me/manuals/software/jujutsu.html</link><guid isPermaLink="false">Manuals/Software/Jujutsu.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sat, 30 Nov 2024 09:10:55 GMT</pubDate></item><item><title><![CDATA[DuckDB]]></title><description><![CDATA[<a class="tag" href="https://notes.artyom.me/?query=tag:wishlist" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#wishlist</a> 
  <br>Looks like a more modern <a data-href="SQLite" href="https://notes.artyom.me/SQLite" class="internal-link" target="_self" rel="noopener nofollow">SQLite</a> with focus on “if you need a library for doing data analysis, and you want SQL, then here you go”.<br>
 DuckDB's use cases can be split into roughly three major categories. Namely, DuckDB can be used for interactive data analysis by a user (“data science”) and as pipeline component for automated data processing (“data enginereering”).
 <br>Kinda.. like the SC relations library?<br><br><br>
@@ -114,164 +313,95 @@ SELECT Portfolio, Currency
 SELECT col1, col2
 WHERE ...
 <br>SELECT * can be skipped:<br>FROM data;
-]]></description><link>https://notes.artyom.me/manuals/software/duckdb.html</link><guid isPermaLink="false">Manuals/Software/DuckDB.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:47:08 GMT</pubDate></item><item><title><![CDATA[Jujutsu]]></title><description><![CDATA[ 
- <br><br>
-<br>Brew: brew install jj
-<br>Nix: nix profile install nixpkgs#jujutsu
-<br><br><br>
-<br>jj st — show files in the current commit, and conflicting bookmarks
-
-<br>jj st path1 path2 ... — filter by folder
-
-
-<br><br><br>$ jj log -T 'commit_id ++ "\n"' --no-graph -r main::
-
-4eb5e51f1364c952ba41f79780be4aa438cd3c6d
-5033fc20524e1340a90f0167f9b6ff0a91da0583
-b43602bc767313d05efca8d26981bdb786eef688
-92eeb52154d882b3dd37c2949a997ec58cade369
-510f3a4dea47043141d4da36f5620fc3d76a1142
-a8f81f7dfc82b017efb7eb023723e2673c354397
-c0a9e20222b5cbcd3f08c1e5219cbec114fab565
 <br><br>
-<br>
-jj ci — create a new commit
+<br><a href="https://notes.artyom.me?query=tag:wishlist" class="tag" target="_blank" rel="noopener nofollow">#wishlist</a> I want assignment syntax, eg. table := foo, without the cumbersome create or replace table.
+]]></description><link>https://notes.artyom.me/manuals/software/duckdb.html</link><guid isPermaLink="false">Manuals/Software/DuckDB.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 21:03:57 GMT</pubDate></item><item><title><![CDATA[Atuin]]></title><description><![CDATA[ 
+ <br><br>nix profile install nixpkgs#atuin
+<br>I haven’t tried it with bash, only zsh. For zsh:<br>echo 'eval "$(atuin init zsh --disable-up-arrow)"' &gt;&gt; ~/.zshrc
+<br>And then import history:<br>atuin import auto
+]]></description><link>https://notes.artyom.me/manuals/software/atuin.html</link><guid isPermaLink="false">Manuals/Software/Atuin.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 10:20:18 GMT</pubDate></item><item><title><![CDATA[DB-to-API]]></title><description><![CDATA[ 
+ <br>KEYWORD: “graphql gateway”<br><br>
+<br>Hasura (v2)
 
-<br>jj ci path1 path2 ... — create a new parent commit with only those changes
-<br>jj ci -i — interactively choose what will go into the parent
-
-
-<br>
-jj squash — move all changes into the parent
-
-<br>jj squash path1 path2 ... — squash only given paths
-<br>jj squash -i — choose which changes to move
-
-
-<br>
-jj abandon — delete current commit
-
-<br>jj abandon &lt;REV&gt; ... — delete a bunch of commits
-<br>jj abandon --restore-descendants — delete commits without changing their children’s snapshots
+<br>Supports GraphQL
+<br>Not the focus anymore (they are building Hasura DDN)
 
 
-<br>
-jj split
+<br>Hasura DDN (v3)
 
-<br>jj split -r &lt;REV&gt; — split a commit into two, interactively
-<br>jj split -r &lt;REV&gt; path1 path2 ... — split out a bunch of files into a parent commit
+<br>Can also be self-hosted
+<br>Everything is split into connectors instead of baking Postgres support into Hasura
+<br><a data-href="2024-11-29" href="https://notes.artyom.me/2024-11-29" class="internal-link" target="_self" rel="noopener nofollow">2024-11-29</a> Still WIP somewhat? according to the comparison page: 
 
-
-<br>
-jj diffedit
-
-<br>jj diffedit -r &lt;REV&gt; — delete some changes from a commit
-<br>jj diffedit -r &lt;REV&gt; --restore-descendants — delete changes from a commit, but keep them in the children’s snapshots
+<br><a data-tooltip-position="top" aria-label="https://hasura.io/docs/3.0/upgrade/feature-availability/api-features" rel="noopener nofollow" class="external-link" href="https://hasura.io/docs/3.0/upgrade/feature-availability/api-features" target="_blank">API | Hasura GraphQL Docs</a>
 
 
-<br><br><br>If you found a snapshot with jj evolog and want to insert it before change C (because change C did too many things and you want to split it)<br>
-<br>Before: A → B → C
-<br>After: A → B → C_old → C
-<br># Save the content into a new change right after
-jj new -A C
-# Overwrite the old change
-jj restore --restore-descendants --from &lt;C_old commit ID&gt; --to C-
-<br><br><br>This happens — probably — when a branch had to be rebased before merge. You need to abandon those commits manually.<br><br><a data-href="2024-11-23" href="https://notes.artyom.me/daily/2024-11-23.html" class="internal-link" target="_self" rel="noopener nofollow">2024-11-23</a> Renaming a file will lead to conflicts in subsequent commits.<br>This will perhaps get fixed later.]]></description><link>https://notes.artyom.me/manuals/software/jujutsu.html</link><guid isPermaLink="false">Manuals/Software/Jujutsu.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 10:43:38 GMT</pubDate></item><item><title><![CDATA[Mermaid]]></title><description><![CDATA[ 
- <br><br><br>Probably just use imagemagick/<a data-href="rsvg-convert" href="https://notes.artyom.me/manuals/software/rsvg-convert.html" class="internal-link" target="_self" rel="noopener nofollow">rsvg-convert</a>, same as for <a data-href="d2#Render to .png" href="https://notes.artyom.me/manuals/software/d2.html#Render_to_.png" class="internal-link" target="_self" rel="noopener nofollow">d2 &gt; Render to .png</a>]]></description><link>https://notes.artyom.me/manuals/software/mermaid.html</link><guid isPermaLink="false">Manuals/Software/Mermaid.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Mon, 25 Nov 2024 19:12:01 GMT</pubDate></item><item><title><![CDATA[Nix]]></title><description><![CDATA[ 
- <br><br>The suggested replacement for nix-env -iA.<br>
-<br>Install a package: nix profile install nixpkgs#foo
-]]></description><link>https://notes.artyom.me/manuals/software/nix.html</link><guid isPermaLink="false">Manuals/Software/Nix.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sun, 24 Nov 2024 14:04:09 GMT</pubDate></item><item><title><![CDATA[Obsidian]]></title><description><![CDATA[ 
- <br><br><br>Install the Obsidian extension in Raycast and give it the path to the Obsidian folder (one where vault is located).<br>Then you’ll get:<br><img alt="Pasted image 20241123142910.png" src="https://notes.artyom.me/lib/media/pasted-image-20241123142910.png" style="width: 500px; max-width: 100%;"><br><br>
-<br>How to change links when headings are renamed, without using Rename this heading...
-<br>How to change heading level automatically when reordering sections
-<br>How to have nice backups (auto-git?)
-
-<br>I want some kind of a general task-runner on mac
 
 
-<br>Callouts are too big
+<br>Nhost
 
-<br>Can use title-only callouts
+<br>Some kind of polished distro of Hasura+smth else? With nice-looking docs
 
 
+<br>PostGraphile
+
+<br>subscriptions are hard? not automatic
+
+
+<br>Supabase
+
+<br>idk?
+
+
+<br>Prisma
+
+<br>paid? idk
+
+
+<br>Postgrest
+
+<br>doesn’t support graphql
+
+
+]]></description><link>https://notes.artyom.me/radar/db-to-api.html</link><guid isPermaLink="false">Radar/DB-to-API.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Fri, 29 Nov 2024 17:16:54 GMT</pubDate></item><item><title><![CDATA[Video calls]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>$ Works when other things don’t work
+
+<br>Eg. audio is randomly not working in FaceTime and Google Meet with some people
+
+
+<br>! Doesn’t have remote control
 <br><br><br>
-<br><a data-href="2024-11-25" href="https://notes.artyom.me/2024-11-25" class="internal-link" target="_self" rel="noopener nofollow">2024-11-25</a> Solution: disable the Minimal theme
-]]></description><link>https://notes.artyom.me/manuals/software/obsidian.html</link><guid isPermaLink="false">Manuals/Software/Obsidian.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 10:20:20 GMT</pubDate><enclosure url="https://notes.artyom.me/lib/media/pasted-image-20241123142910.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://notes.artyom.me/lib/media/pasted-image-20241123142910.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[RHEL]]></title><description><![CDATA[ 
- <br><br><br>sudo dnf install -y &lt;package name&gt;
-<br><br>yum provides '*/chsh'
-<br><br><br>chsh -s $(which zsh)
-]]></description><link>https://notes.artyom.me/manuals/software/rhel.html</link><guid isPermaLink="false">Manuals/Software/RHEL.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sun, 24 Nov 2024 14:04:23 GMT</pubDate></item><item><title><![CDATA[ripgrep (rg)]]></title><description><![CDATA[ 
- <br><br><br>rg &lt;pattern with capture groups&gt; -or '$1'
-<br>
-TODO: does this work when there are no matches?
-]]></description><link>https://notes.artyom.me/manuals/software/ripgrep-(rg).html</link><guid isPermaLink="false">Manuals/Software/ripgrep (rg).md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sat, 23 Nov 2024 21:26:06 GMT</pubDate></item><item><title><![CDATA[rsvg-convert]]></title><description><![CDATA[ 
- <br><br>
-<br>Nix: nix profile install nixpkgs#librsvg
-]]></description><link>https://notes.artyom.me/manuals/software/rsvg-convert.html</link><guid isPermaLink="false">Manuals/Software/rsvg-convert.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Mon, 25 Nov 2024 20:18:27 GMT</pubDate></item><item><title><![CDATA[Runme Notebooks]]></title><description><![CDATA[ 
- <br><br><br>  "workbench.editorAssociations": {
-    "*.md": "default"
-  },
-<br><br>Install the “Jupyter Keys” extension and then manually remove the runme.noop keybindings for A, B, etc.<br><br><br>Solution: Redirect to stdout. <br><br><br>This happens at least on the SC laptop (VSCode connected to local VM). Idk what’s the fix yet.<br><br><a data-tooltip-position="top" aria-label="https://github.com/stateful/vscode-runme/issues/1817" rel="noopener nofollow" class="external-link" href="https://github.com/stateful/vscode-runme/issues/1817" target="_blank">#1817 Make extension setting available to choose default between (non)-interactive</a><br>(Although now I’m not even sure I want non-interactive outputs by default — if saving worked, maybe it’d be fine)]]></description><link>https://notes.artyom.me/manuals/software/runme-notebooks.html</link><guid isPermaLink="false">Manuals/Software/Runme Notebooks.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Tue, 26 Nov 2024 10:33:43 GMT</pubDate></item><item><title><![CDATA[sd]]></title><description><![CDATA[ 
- <br>An easy “replace text”. Supports capture groups.<br><br>
-<br>Nix: nix profile install nixpkgs#sd
-<br><br>Simple replace:<br>$ echo '[Google](http://google.com)' | sd 'http:' 'https:'
-[Google](https://google.com)
-<br>With capture groups:<br>$ echo 'Open &lt;https://google.com&gt;' | sd '&lt;(https?://(.+))&gt;' '[$2]($1)'
-Open [google.com](https://google.com)
-]]></description><link>https://notes.artyom.me/manuals/software/sd.html</link><guid isPermaLink="false">Manuals/Software/sd.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 10:20:20 GMT</pubDate></item><item><title><![CDATA[strace]]></title><description><![CDATA[ 
- <br><br><br>strace -f -t -e trace=file &lt;command here&gt;
-]]></description><link>https://notes.artyom.me/manuals/software/strace.html</link><guid isPermaLink="false">Manuals/Software/strace.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sun, 24 Nov 2024 14:04:30 GMT</pubDate></item><item><title><![CDATA[VSCode]]></title><description><![CDATA[ 
- <br><br><br>First of all, enable vim-like keybindings: <a data-href="Runme Notebooks#Enable vim-like keybindings (A, B, etc)" href="https://notes.artyom.me/manuals/software/runme-notebooks.html#Enable_vim-like_keybindings_(A,_B,_etc)" class="internal-link" target="_self" rel="noopener nofollow">Runme Notebooks &gt; Enable vim-like keybindings (A, B, etc)</a><br><br>Simple: ⌘K ⌘S and edit.<br>Advanced:<br>Rules are evaluated from bottom to top. (Not from top to bottom!). See <a data-tooltip-position="top" aria-label="https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization" target="_blank">Visual Studio Code Key Bindings</a>:<br>
+<br>$ No echo (unlike Skype)
+<br>$ Can hide myself
+<br><br><br>
+<br>? Echo
+<br>! Can’t hide myself
+]]></description><link>https://notes.artyom.me/radar/video-calls.html</link><guid isPermaLink="false">Radar/Video calls.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:55:31 GMT</pubDate></item><item><title><![CDATA[Backend]]></title><description><![CDATA[ 
+ <br><br><br><br>
+<br><a rel="noopener nofollow" class="external-link" href="https://pylon.cronit.io/" target="_blank">https://pylon.cronit.io/</a>
 
-<br>the rules are evaluated from bottom to top.
-<br>the first rule that matches, both the key and in terms of when, is accepted.
-<br>no more rules are processed.
-<br>if a rule is found and has a command set, the command is executed.
-
-<br>Useful commands:<br>
-<br>Developer: Toggle Keyboard Shortcuts Troubleshooting shows you which shorcut rule was matched.
-<br>Developer: Inspect Context Keys will show everything you can use inside of when.
-
-<br>You need to open the devtools (Developer: Toggle Developer Tools) for that.
-<br>See <a data-tooltip-position="top" aria-label="https://code.visualstudio.com/api/references/when-clause-contexts" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/api/references/when-clause-contexts" target="_blank">when clause contexts | Visual Studio Code Extension API</a> for the most common when variables.
+<br>Like.. a framework for easily defining graphql backends? With simple schema generation, etc
+<br>Cannot (?) be embedded into Next.js? Need to research 
 
 
-<br><br>Execute a DB query on ⌘Enter, but only when SQLTools is open: <br>  {
-    "key": "cmd+enter",
-    "command": "sqltools.executeCurrentQuery",
-    "when": "editorTextFocus &amp;&amp; sqltools.file.connectionAttached"
-  }
-<br><br><br><br>
-<br>$ Can show the results as a table
-<br>$ Has autocomplete and “Run selected query”
-
-<br>(<a data-href="#^d81100" href="https://notes.artyom.me/about:blank#^d81100" class="internal-link" target="_self" rel="noopener nofollow">^d81100</a> shows how the selected query thing is set up)
-<br>? Autocomplete doesn’t always work (eg. for p.)
-<br>? Autocomplete doesn’t quote column names where it should
-
-
-<br><img alt="Pasted image 20241128023911.png" src="https://notes.artyom.me/lib/media/pasted-image-20241128023911.png"><br><br>
-<br>? How can I show all potentially matching shortcuts and an explanation of why they weren’t matched?
-<br>? I want to define custom commands like “select paragraph, add ; to the end if it’s not there, send to the terminal”
-
-<br>Ideally with JS logic in them!
-
-
-]]></description><link>https://notes.artyom.me/manuals/software/vscode.html</link><guid isPermaLink="false">Manuals/Software/VSCode.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:50:30 GMT</pubDate><enclosure url="https://notes.artyom.me/lib/media/pasted-image-20241128023911.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://notes.artyom.me/lib/media/pasted-image-20241128023911.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[zoxide]]></title><description><![CDATA[ 
- <br>A tool for jumping to paths.<br><br><br>brew install zoxide
-<br>And then add eval "$(zoxide init zsh)" somewhere in the dotfiles<br><br>Defaults:<br>
-<br>z &lt;path&gt; — jump
-<br>zi — show known locations
-<br>I don’t like using my pinky, so I changed it to go and goi.]]></description><link>https://notes.artyom.me/manuals/software/zoxide.html</link><guid isPermaLink="false">Manuals/Software/zoxide.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Sun, 24 Nov 2024 14:04:31 GMT</pubDate></item><item><title><![CDATA[Aggregation]]></title><description><![CDATA[ 
- <br><br><br>See <a data-href="devdocs — API Documentation Browser" href="https://notes.artyom.me/clippings/devdocs-—-api-documentation-browser.html" class="internal-link" target="_self" rel="noopener nofollow">devdocs — API Documentation Browser</a>.<br>Can scrape web pages and present them as unified interface with search.]]></description><link>https://notes.artyom.me/radar/docs/aggregation.html</link><guid isPermaLink="false">Radar/Docs/Aggregation.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:54:50 GMT</pubDate></item><item><title><![CDATA[DB subscription]]></title><description><![CDATA[ 
- <br>I want to subscribe to DB data in my frontend and listen to updates.<br><br><br><a rel="noopener nofollow" class="external-link" href="https://rethinkdb.com/" target="_blank">https://rethinkdb.com/</a><br>Doesn’t support Postgres. 26k stars on GH tho<br>Perhaps it’s useful when you need really realtime things? Like collaborative editing / chat?<br><br><br><a data-tooltip-position="top" aria-label="https://ably.com/docs/products/livesync" rel="noopener nofollow" class="external-link" href="https://ably.com/docs/products/livesync" target="_blank">Ably LiveSync | Ably Realtime</a> looks ok but postgres is in ALPHA (not even in beta), <a data-href="2024-11-28" href="https://notes.artyom.me/2024-11-28" class="internal-link" target="_self" rel="noopener nofollow">2024-11-28</a> apparently fairly new (comments on HN from founders from 7mo ago)]]></description><link>https://notes.artyom.me/radar/js/db-subscription.html</link><guid isPermaLink="false">Radar/JS/DB subscription.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:15:09 GMT</pubDate></item><item><title><![CDATA[GraphQL]]></title><description><![CDATA[ 
+<br><br><br><br>]]></description><link>https://notes.artyom.me/radar/js/graphql/backend.html</link><guid isPermaLink="false">Radar/JS/GraphQL/Backend.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Fri, 29 Nov 2024 23:57:51 GMT</pubDate></item><item><title><![CDATA[GraphQL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>? <a data-href="2024-11-26" href="https://notes.artyom.me/daily/2024-11-26.html" class="internal-link" target="_self" rel="noopener nofollow">2024-11-26</a> Andrey reports that <a data-href="Pothos" href="https://notes.artyom.me/Pothos" class="internal-link" target="_self" rel="noopener nofollow">Pothos</a> is a lot of pain
 
 <br>“everything is possible but hard”
 
 
-]]></description><link>https://notes.artyom.me/radar/js/graphql.html</link><guid isPermaLink="false">Radar/JS/GraphQL.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Tue, 26 Nov 2024 20:31:36 GMT</pubDate></item><item><title><![CDATA[Diagrams]]></title><description><![CDATA[ 
+]]></description><link>https://notes.artyom.me/radar/js/graphql.html</link><guid isPermaLink="false">Radar/JS/GraphQL.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Tue, 26 Nov 2024 20:31:36 GMT</pubDate></item><item><title><![CDATA[DB subscription]]></title><description><![CDATA[ 
+ <br>I want to subscribe to DB data in my frontend and listen to updates.<br><br><br><a rel="noopener nofollow" class="external-link" href="https://rethinkdb.com/" target="_blank">https://rethinkdb.com/</a><br>Doesn’t support Postgres. 26k stars on GH tho<br>Perhaps it’s useful when you need really realtime things? Like collaborative editing / chat?<br><br><br><a data-tooltip-position="top" aria-label="https://ably.com/docs/products/livesync" rel="noopener nofollow" class="external-link" href="https://ably.com/docs/products/livesync" target="_blank">Ably LiveSync | Ably Realtime</a> looks ok but postgres is in ALPHA (not even in beta), <a data-href="2024-11-28" href="https://notes.artyom.me/2024-11-28" class="internal-link" target="_self" rel="noopener nofollow">2024-11-28</a> apparently fairly new (comments on HN from founders from 7mo ago)]]></description><link>https://notes.artyom.me/radar/js/db-subscription.html</link><guid isPermaLink="false">Radar/JS/DB subscription.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:15:09 GMT</pubDate></item><item><title><![CDATA[Link checkers]]></title><description><![CDATA[ 
+ <br><br><br><br>
+<br><a rel="noopener nofollow" class="external-link" href="https://github.com/serokell/xrefcheck" target="_blank">https://github.com/serokell/xrefcheck</a>
+
+<br><img alt="IMG_0719.png" src="https://notes.artyom.me/lib/media/img_0719.png">
+
+
+<br><br><br><br>]]></description><link>https://notes.artyom.me/radar/docs/link-checkers.html</link><guid isPermaLink="false">Radar/Docs/Link checkers.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Fri, 29 Nov 2024 23:05:48 GMT</pubDate><enclosure url="https://notes.artyom.me/lib/media/img_0719.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://notes.artyom.me/lib/media/img_0719.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Aggregation]]></title><description><![CDATA[ 
+ <br><br><br>See <a data-href="devdocs — API Documentation Browser" href="https://notes.artyom.me/clippings/devdocs-—-api-documentation-browser.html" class="internal-link" target="_self" rel="noopener nofollow">devdocs — API Documentation Browser</a>.<br>Can scrape web pages and present them as unified interface with search.]]></description><link>https://notes.artyom.me/radar/docs/aggregation.html</link><guid isPermaLink="false">Radar/Docs/Aggregation.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:54:50 GMT</pubDate></item><item><title><![CDATA[Diagrams]]></title><description><![CDATA[ 
  <br><br>
 <br><a data-tooltip-position="top" aria-label="https://xosh.org/text-to-diagram/" rel="noopener nofollow" class="external-link" href="https://xosh.org/text-to-diagram/" target="_blank">Online text to diagram tools | XOSH.ORG</a>
 <br><a data-tooltip-position="top" aria-label="https://text-to-diagram.com" rel="noopener nofollow" class="external-link" href="https://text-to-diagram.com" target="_blank">text-to-diagram.com</a>
@@ -301,19 +431,5 @@ after: a --&gt; b --&gt; c --&gt; d
 <br><br>
 <br>$ Nice syntax
 <br>! Since it’s based on Dagre (like Mermaid and everyone else), it can’t do the “subgraph under another” thing either
-<br><img alt="Pasted image 20241125220459.png" src="https://notes.artyom.me/lib/media/pasted-image-20241125220459.png"><br><br><a data-href="2024-11-21" href="https://notes.artyom.me/2024-11-21" class="internal-link" target="_self" rel="noopener nofollow">2024-11-21</a> The icons are very nice, but I couldn’t control the layout and after trying to draw a simple files flow I abandoned it in favor of <a data-href="#d2" href="https://notes.artyom.me/about:blank#d2" class="internal-link" target="_self" rel="noopener nofollow">d2</a>.]]></description><link>https://notes.artyom.me/radar/diagrams.html</link><guid isPermaLink="false">Radar/Diagrams.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:56:03 GMT</pubDate><enclosure url="https://notes.artyom.me/lib/media/pasted-image-20241125221825.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://notes.artyom.me/lib/media/pasted-image-20241125221825.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Video calls]]></title><description><![CDATA[ 
- <br><br><br>
-<br>$ Works when other things don’t work
-
-<br>Eg. audio is randomly not working in FaceTime and Google Meet with some people
-
-
-<br>! Doesn’t have remote control
-<br><br><br>
-<br>$ No echo (unlike Skype)
-<br>$ Can hide myself
-<br><br><br>
-<br>? Echo
-<br>! Can’t hide myself
-]]></description><link>https://notes.artyom.me/radar/video-calls.html</link><guid isPermaLink="false">Radar/Video calls.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:55:31 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
+<br><img alt="Pasted image 20241125220459.png" src="https://notes.artyom.me/lib/media/pasted-image-20241125220459.png"><br><br><a data-href="2024-11-21" href="https://notes.artyom.me/2024-11-21" class="internal-link" target="_self" rel="noopener nofollow">2024-11-21</a> The icons are very nice, but I couldn’t control the layout and after trying to draw a simple files flow I abandoned it in favor of <a data-href="#d2" href="https://notes.artyom.me/about:blank#d2" class="internal-link" target="_self" rel="noopener nofollow">d2</a>.]]></description><link>https://notes.artyom.me/radar/diagrams.html</link><guid isPermaLink="false">Radar/Diagrams.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Thu, 28 Nov 2024 01:56:03 GMT</pubDate><enclosure url="https://notes.artyom.me/lib/media/pasted-image-20241125221825.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://notes.artyom.me/lib/media/pasted-image-20241125221825.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[index]]></title><description><![CDATA[ 
  <br>See the sidebar for the list of notes.<br>]]></description><link>https://notes.artyom.me/index.html</link><guid isPermaLink="false">index.md</guid><dc:creator><![CDATA[Emily]]></dc:creator><pubDate>Wed, 27 Nov 2024 13:19:48 GMT</pubDate></item></channel></rss>

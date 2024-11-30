@@ -1,37 +1,41 @@
 {
   "vaultName": "Main",
-  "lastExport": 1732759449625,
+  "lastExport": 1732957882908,
   "pluginVersion": "1.8.01",
-  "validBodyClasses": "publish css-settings-manager show-inline-title show-ribbon code-styler code-styler-style-inline code-styler-gutter-highlight theme-dark background-settings-workplace-theme-light-in-the-note background-settings-workplace-theme-dark-in-the-sky background-image-settings-markdown-page-transparent notebook-liked-markdown-page-grid-notebook-1 panel-page-bg-theme-light-wall panel-page-bg-theme-dark-plant layout-style-options-default h2-toggle-underline h3-toggle-underline h4-toggle-underline bt-default-unordered-list default-ol-list-marker list-no-border bt-connected-indent-hover bt-colorful-connected-indent-hover folder-icons remove-arrow bt-toggle-colorful-folder folder-style-change-options-colorful-border folder-colorful-six table-width-100 tag-default admonition-bg-color-same style-options-for-admonition-plugin style-options-for-buttons-plugin dataview-list-style-pacman memos-banner-gradient thino-frosted-style thino-background-default quiet-outline-optimize code-theme-bt-default whole-code-wrap",
+  "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title show-ribbon code-styler code-styler-style-inline code-styler-gutter-highlight background-settings-workplace-theme-light-in-the-note background-settings-workplace-theme-dark-in-the-sky background-image-settings-markdown-page-transparent notebook-liked-markdown-page-grid-notebook-1 panel-page-bg-theme-light-wall panel-page-bg-theme-dark-plant layout-style-options-default h2-toggle-underline h3-toggle-underline h4-toggle-underline bt-default-unordered-list default-ol-list-marker list-no-border bt-connected-indent-hover bt-colorful-connected-indent-hover folder-icons remove-arrow bt-toggle-colorful-folder folder-style-change-options-colorful-border folder-colorful-six table-width-100 tag-default admonition-bg-color-same style-options-for-admonition-plugin style-options-for-buttons-plugin dataview-list-style-pacman memos-banner-gradient thino-frosted-style thino-background-default quiet-outline-optimize code-theme-bt-default whole-code-wrap",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
-    "Manuals/Dev/Regexes.md",
     "Manuals/Dev/Shell scripting.md",
     "Manuals/Dev/SQL.md",
-    "Manuals/Software/Atuin.md",
-    "Manuals/Software/d2.md",
-    "Manuals/Software/DuckDB.md",
-    "Manuals/Software/Jujutsu.md",
-    "Manuals/Software/Mermaid.md",
-    "Manuals/Software/Nix.md",
-    "Manuals/Software/Obsidian.md",
-    "Manuals/Software/RHEL.md",
-    "Manuals/Software/ripgrep (rg).md",
-    "Manuals/Software/rsvg-convert.md",
-    "Manuals/Software/Runme Notebooks.md",
-    "Manuals/Software/sd.md",
-    "Manuals/Software/strace.md",
-    "Manuals/Software/VSCode.md",
+    "Manuals/Dev/Regexes.md",
     "Manuals/Software/zoxide.md",
-    "Radar/Docs/Aggregation.md",
-    "Radar/JS/DB subscription.md",
-    "Radar/JS/GraphQL.md",
-    "Radar/Diagrams.md",
+    "Manuals/Software/strace.md",
+    "Manuals/Software/sd.md",
+    "Manuals/Software/rsvg-convert.md",
+    "Manuals/Software/ripgrep (rg).md",
+    "Manuals/Software/d2.md",
+    "Manuals/Software/VSCode.md",
+    "Manuals/Software/Runme Notebooks.md",
+    "Manuals/Software/RHEL.md",
+    "Manuals/Software/Obsidian.md",
+    "Manuals/Software/Nix.md",
+    "Manuals/Software/Mermaid.md",
+    "Manuals/Software/Jujutsu.md",
+    "Manuals/Software/DuckDB.md",
+    "Manuals/Software/Atuin.md",
+    "Radar/DB-to-API.md",
     "Radar/Video calls.md",
+    "Radar/JS/GraphQL/Backend.md",
+    "Radar/JS/GraphQL.md",
+    "Radar/JS/DB subscription.md",
+    "Radar/Docs/Link checkers.md",
+    "Radar/Docs/Aggregation.md",
+    "Radar/Diagrams.md",
     "index.md",
-    "lib/media/pasted-image-20241123142910.png",
     "lib/media/pasted-image-20241128023911.png",
+    "lib/media/pasted-image-20241123142910.png",
+    "lib/media/img_0719.png",
     "lib/media/pasted-image-20241125221825.png",
     "lib/media/pasted-image-20241125220459.png",
     "lib/fonts/94f2f163d4b698242fef.otf",
@@ -89,95 +93,95 @@
   ],
   "fileInfo": {
     "Manuals/Software/Atuin.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 269,
       "exportedPath": "manuals/software/atuin.html",
       "dependencies": []
     },
     "Manuals/Software/d2.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 1024,
       "exportedPath": "manuals/software/d2.html",
       "dependencies": []
     },
     "Manuals/Software/Jujutsu.md": {
-      "modifiedTime": 1732759449625,
-      "sourceSize": 2451,
+      "modifiedTime": 1732957882908,
+      "sourceSize": 2974,
       "exportedPath": "manuals/software/jujutsu.html",
       "dependencies": []
     },
     "Manuals/Software/Mermaid.md": {
-      "modifiedTime": 1732759449625,
-      "sourceSize": 113,
+      "modifiedTime": 1732957882908,
+      "sourceSize": 114,
       "exportedPath": "manuals/software/mermaid.html",
       "dependencies": []
     },
     "Manuals/Software/Nix.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 121,
       "exportedPath": "manuals/software/nix.html",
       "dependencies": []
     },
     "Manuals/Software/Obsidian.md": {
-      "modifiedTime": 1732759449625,
-      "sourceSize": 675,
+      "modifiedTime": 1732957882908,
+      "sourceSize": 862,
       "exportedPath": "manuals/software/obsidian.html",
       "dependencies": [
         "lib/media/pasted-image-20241123142910.png"
       ]
     },
     "Manuals/Software/RHEL.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 249,
       "exportedPath": "manuals/software/rhel.html",
       "dependencies": []
     },
     "Manuals/Software/ripgrep (rg).md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 138,
       "exportedPath": "manuals/software/ripgrep-(rg).html",
       "dependencies": []
     },
     "Manuals/Software/rsvg-convert.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 64,
       "exportedPath": "manuals/software/rsvg-convert.html",
       "dependencies": []
     },
     "Manuals/Software/Runme Notebooks.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 979,
       "exportedPath": "manuals/software/runme-notebooks.html",
       "dependencies": []
     },
     "Manuals/Software/sd.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 387,
       "exportedPath": "manuals/software/sd.html",
       "dependencies": []
     },
     "Manuals/Software/strace.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 106,
       "exportedPath": "manuals/software/strace.html",
       "dependencies": []
     },
     "Manuals/Software/VSCode.md": {
-      "modifiedTime": 1732759449625,
-      "sourceSize": 1995,
+      "modifiedTime": 1732957882908,
+      "sourceSize": 3431,
       "exportedPath": "manuals/software/vscode.html",
       "dependencies": [
         "lib/media/pasted-image-20241128023911.png"
       ]
     },
     "Manuals/Software/zoxide.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 356,
       "exportedPath": "manuals/software/zoxide.html",
       "dependencies": []
     },
     "lib/media/pasted-image-20241123142910.png": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 579123,
       "exportedPath": "lib/media/pasted-image-20241123142910.png",
       "dependencies": []
@@ -189,97 +193,97 @@
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1732759449625,
-      "sourceSize": 24201,
+      "modifiedTime": 1732957882908,
+      "sourceSize": 27357,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
@@ -315,13 +319,13 @@
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
@@ -333,97 +337,97 @@
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 131021,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 853897,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 310,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 144,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
     "lib/styles/snippets.css": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 243,
       "exportedPath": "lib/styles/snippets.css",
       "dependencies": []
     },
     "lib/styles/other-plugins.css": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 47888,
       "exportedPath": "lib/styles/other-plugins.css",
       "dependencies": []
     },
     "Manuals/Software/DuckDB.md": {
-      "modifiedTime": 1732759449625,
-      "sourceSize": 5899,
+      "modifiedTime": 1732957882908,
+      "sourceSize": 6021,
       "exportedPath": "manuals/software/duckdb.html",
       "dependencies": []
     },
     "Manuals/Dev/Regexes.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 776,
       "exportedPath": "manuals/dev/regexes.html",
       "dependencies": []
     },
     "Manuals/Dev/Shell scripting.md": {
-      "modifiedTime": 1732759449625,
-      "sourceSize": 74,
+      "modifiedTime": 1732957882908,
+      "sourceSize": 890,
       "exportedPath": "manuals/dev/shell-scripting.html",
       "dependencies": []
     },
     "Manuals/Dev/SQL.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 626,
       "exportedPath": "manuals/dev/sql.html",
       "dependencies": []
     },
     "index.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 151,
       "exportedPath": "index.html",
       "dependencies": []
     },
     "Radar/Docs/Aggregation.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 149,
       "exportedPath": "radar/docs/aggregation.html",
       "dependencies": []
     },
     "Radar/JS/DB subscription.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 503,
       "exportedPath": "radar/js/db-subscription.html",
       "dependencies": []
     },
     "Radar/JS/GraphQL.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 138,
       "exportedPath": "radar/js/graphql.html",
       "dependencies": []
     },
     "Radar/Diagrams.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 1735,
       "exportedPath": "radar/diagrams.html",
       "dependencies": [
@@ -432,27 +436,53 @@
       ]
     },
     "Radar/Video calls.md": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 317,
       "exportedPath": "radar/video-calls.html",
       "dependencies": []
     },
     "lib/media/pasted-image-20241128023911.png": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 164353,
       "exportedPath": "lib/media/pasted-image-20241128023911.png",
       "dependencies": []
     },
     "lib/media/pasted-image-20241125221825.png": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 73230,
       "exportedPath": "lib/media/pasted-image-20241125221825.png",
       "dependencies": []
     },
     "lib/media/pasted-image-20241125220459.png": {
-      "modifiedTime": 1732759449625,
+      "modifiedTime": 1732957882908,
       "sourceSize": 62676,
       "exportedPath": "lib/media/pasted-image-20241125220459.png",
+      "dependencies": []
+    },
+    "Radar/DB-to-API.md": {
+      "modifiedTime": 1732957882908,
+      "sourceSize": 693,
+      "exportedPath": "radar/db-to-api.html",
+      "dependencies": []
+    },
+    "Radar/JS/GraphQL/Backend.md": {
+      "modifiedTime": 1732957882908,
+      "sourceSize": 335,
+      "exportedPath": "radar/js/graphql/backend.html",
+      "dependencies": []
+    },
+    "Radar/Docs/Link checkers.md": {
+      "modifiedTime": 1732957882908,
+      "sourceSize": 213,
+      "exportedPath": "radar/docs/link-checkers.html",
+      "dependencies": [
+        "lib/media/img_0719.png"
+      ]
+    },
+    "lib/media/img_0719.png": {
+      "modifiedTime": 1732957882908,
+      "sourceSize": 99091,
+      "exportedPath": "lib/media/img_0719.png",
       "dependencies": []
     }
   }
